@@ -33,7 +33,7 @@ def contact():
 @app.route('/generate-qr')
 def generate_qr():
     # Get the current domain URL
-    website_url = "https://2be34e1a4a2d.ngrok-free.app"  # Replace with your actual deployed URL
+    website_url = "https://qrcampus2.onrender.com"  # Replace with your actual deployed URL
     
     # Create QR code
     qr = qrcode.QRCode(
