@@ -1,0 +1,177 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+   <!-- Hero Section -->
+   <section class="hero">
+    <div class="glass-card">
+        <h1>P R Pote Patil College of Engineering & Management</h1>
+        <h2>Amravati - Excellence in Technical Education Since 1983</h2>
+        <p style="font-size: 1.3rem; max-width: 900px; margin: 0 auto 3rem; color: rgba(255, 255, 255, 0.9); line-height: 1.8; font-weight: 300;">
+            Affiliated to Sant Gadge Baba Amravati University & Approved by AICTE, New Delhi. 
+            We are committed to nurturing innovative minds and creating future leaders in technology and management. </p>
+            
+            <!-- Enhanced QR Code Section -->
+            <div class="glow-element bounce-in" style="background: rgba(255,255,255,0.95); padding: 3rem; border-radius: 25px; display: inline-block; box-shadow: 0 20px 60px rgba(0,0,0,0.15); margin-bottom: 3rem; position: relative; overflow: hidden; backdrop-filter: blur(15px);">
+                <!-- Animated Border -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, #667eea, #764ba2, #667eea); padding: 3px; border-radius: 25px; z-index: -1;">
+                    <div style="background: rgba(255,255,255,0.95); border-radius: 22px; height: 100%;"></div>
+                </div>
+                
+                <h3 style="margin-bottom: 1rem; color: #667eea; position: relative;">
+                    <i class="fas fa-qrcode" style="animation: pulse 2s infinite;"></i> 
+                    Share Our College
+                </h3>
+                <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">Scan or share this QR code to spread the word about our college!</p>
+                
+                <a href="/generate-qr" class="pulse" style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; padding: 1.2rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); display: inline-block; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); position: relative; overflow: hidden;">
+                    <span style="position: relative; z-index: 2;">
+                        <i class="fas fa-download"></i> Download QR Code
+                    </span>
+                    <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.6s ease;"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Features Grid -->
+    <section class="animate-on-scroll" style="padding: 4rem 0;">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #333; animation: fadeIn 1s ease-out; background: linear-gradient(45deg, #333, #667eea); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Why Choose PRPPEM?</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            
+            <div class="feature-card stagger-animate glow-element" style="background: rgba(255,255,255,0.95); padding: 2.5rem; border-radius: 25px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.12); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; position: relative; overflow: hidden; backdrop-filter: blur(10px);">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(45deg, #667eea, #764ba2); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;"></div>
+                <div style="font-size: 3.5rem; margin-bottom: 1.5rem; animation: bounce-in 1s ease-out;">🎓</div>
+                <h3 style="margin-bottom: 1rem; color: #333; font-size: 1.4rem; font-weight: 600;">Quality Education</h3>
+                <p style="color: #666; line-height: 1.7; font-size: 1rem;">World-class curriculum designed to meet industry standards and prepare students for future challenges.</p>
+            </div>
+
+            <div class="feature-card" style="background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div style="font-size: 3rem; color: #764ba2; margin-bottom: 1rem;">🔬</div>
+                <h3 style="margin-bottom: 1rem; color: #333;">Modern Labs</h3>
+                <p style="color: #666; line-height: 1.6;">State-of-the-art laboratories equipped with latest technology for hands-on learning experience.</p>
+            </div>
+
+            <div class="feature-card" style="background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;">👥</div>
+                <h3 style="margin-bottom: 1rem; color: #333;">Expert Faculty</h3>
+                <p style="color: #666; line-height: 1.6;">Experienced professors and industry experts dedicated to student success and innovation.</p>
+            </div>
+
+            <div class="feature-card" style="background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div style="font-size: 3rem; color: #764ba2; margin-bottom: 1rem;">💼</div>
+                <h3 style="margin-bottom: 1rem; color: #333;">100% Placement</h3>
+                <p style="color: #666; line-height: 1.6;">Excellent placement record with top companies recruiting our talented graduates.</p>
+            </div>
+
+            <div class="feature-card" style="background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;">🏆</div>
+                <h3 style="margin-bottom: 1rem; color: #333;">Awards & Recognition</h3>
+                <p style="color: #666; line-height: 1.6;">Recognized for excellence in education and awarded by various prestigious organizations.</p>
+            </div>
+
+            <div class="feature-card" style="background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div style="font-size: 3rem; color: #764ba2; margin-bottom: 1rem;">🌍</div>
+                <h3 style="margin-bottom: 1rem; color: #333;">Global Exposure</h3>
+                <p style="color: #666; line-height: 1.6;">International collaborations and exchange programs for global learning opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="text-align: center; padding: 4rem 0; background: rgba(255,255,255,0.8); border-radius: 20px; margin: 2rem 0;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #333;">Ready to Start Your Journey?</h2>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">Join thousands of successful engineers who started their career at PRPPEM</p>
+        <a href="/admissions" style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; padding: 1rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);">
+            Apply Now <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+</div>
+
+<style>
+.feature-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+.feature-card:hover .feature-card::before {
+    transform: scaleX(1);
+}
+
+/* Advanced Text Animation */
+@keyframes gradientText {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Hover effects for feature cards */
+.feature-card:hover {
+    background: rgba(255,255,255,1);
+}
+
+.feature-card:hover div:first-of-type {
+    transform: scale(1.2) rotate(10deg);
+    text-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+    .hero h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    .feature-card {
+        padding: 2rem !important;
+    }
+    
+    .cursor-trail {
+        display: none;
+    }
+    
+    .floating-element {
+        font-size: 1.5rem;
+    }
+}
+
+/* Loading animation for page elements */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced button hover effects */
+a[href="/generate-qr"]:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+a[href="/generate-qr"]:hover div {
+    left: 0;
+}
+
+a[href="/admissions"]:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+</style>
+{% endblock %}

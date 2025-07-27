@@ -1,0 +1,203 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="glass-card scroll-animate">
+            <h1>P R Pote Patil College of Engineering & Management</h1>
+            <h2>Amravati - Excellence in Technical Education Since 1983</h2>
+            <p>
+                Affiliated to Sant Gadge Baba Amravati University & Approved by AICTE, New Delhi. 
+                We are committed to nurturing innovative minds and creating future leaders in technology and management.
+            </p>
+            
+            <!-- QR Code Section -->
+            <div class="qr-section">
+                <h3><i class="fas fa-qrcode"></i> Share Our College</h3>
+                <p>Scan or share this QR code to spread the word about PRPPEM!</p>
+                <a href="/generate-qr" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Download QR Code
+                </a>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+                <div class="stat-item scroll-animate">
+                    <span class="stat-number">40+</span>
+                    <span>Years of Excellence</span>
+                </div>
+                <div class="stat-item scroll-animate">
+                    <span class="stat-number">5000+</span>
+                    <span>Alumni Worldwide</span>
+                </div>
+                <div class="stat-item scroll-animate">
+                    <span class="stat-number">95%</span>
+                    <span>Placement Record</span>
+                </div>
+                <div class="stat-item scroll-animate">
+                    <span class="stat-number">8</span>
+                    <span>Engineering Branches</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose PRPPEM -->
+    <section>
+        <div class="glass-card scroll-animate">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--text-dark);">
+                <i class="fas fa-star" style="color: var(--accent-color);"></i> Why Choose PRPPEM?
+            </h2>
+            <div class="grid grid-3">
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🎓</div>
+                    <h3>AICTE Approved</h3>
+                    <p>Approved by All India Council for Technical Education and affiliated to Sant Gadge Baba Amravati University.</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Advanced Laboratories</h3>
+                    <p>State-of-the-art labs for Computer Science, Electronics, Mechanical, Civil and other engineering disciplines.</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3>Qualified Faculty</h3>
+                    <p>Highly qualified and experienced faculty members with PhD and industry expertise.</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">💼</div>
+                    <h3>Excellent Placements</h3>
+                    <p>Outstanding placement record with top MNCs like TCS, Infosys, Wipro, Accenture recruiting our graduates.</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🏗️</div>
+                    <h3>Modern Infrastructure</h3>
+                    <p>Spacious classrooms, well-equipped workshops, modern library with digital resources and Wi-Fi campus.</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Industry Connect</h3>
+                    <p>Strong industry partnerships, guest lectures, industrial visits and internship opportunities.</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Awards & Recognition</h3>
+                    <p>Recognized by Government of Maharashtra and various educational bodies for academic excellence.</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">📚</div>
+                    <h3>Research Focus</h3>
+                    <p>Active research programs, paper publications, and student research projects in emerging technologies.</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Student Activities</h3>
+                    <p>Technical festivals, cultural events, sports activities, and student clubs for holistic development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Location -->
+    <section>
+        <div class="map-container scroll-animate">
+            <div class="map-header">
+                <h2><i class="fas fa-map-marker-alt"></i> Find Our Campus</h2>
+                <p>P R Pote Patil College of Engineering & Management, Amravati</p>
+            </div>
+            <iframe 
+                class="map-embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.8639857445556!2d77.7454!3d20.9319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6a143c4c1e6e5%3A0x7f8b6c4d5e2f3a1b!2sP%20R%20Pote%20Patil%20College%20of%20Engineering%20%26%20Management!5e0!3m2!1sen!2sin!4v1642580000000!5m2!1sen!2sin"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="glass-card scroll-animate">
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--text-dark);">
+                <i class="fas fa-info-circle"></i> Campus Information
+            </h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin: 0; color: var(--text-dark);">Address</h4>
+                        <p style="margin: 0.25rem 0 0 0; color: var(--text-light);">
+                            P R Pote Patil College of Engineering & Management<br>
+                            Amravati, Maharashtra, India - 444602
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin: 0; color: var(--text-dark);">Phone</h4>
+                        <p style="margin: 0.25rem 0 0 0; color: var(--text-light);">
+                            +91-721-2662046, +91-721-2662047
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin: 0; color: var(--text-dark);">Email</h4>
+                        <p style="margin: 0.25rem 0 0 0; color: var(--text-light);">
+                            info@prpcem.ac.in, admission@prpcem.ac.in
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin: 0; color: var(--text-dark);">Website</h4>
+                        <p style="margin: 0.25rem 0 0 0; color: var(--text-light);">
+                            www.prpcem.ac.in
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="text-align: center; padding: 2rem 0;">
+        <div class="glass-card scroll-animate">
+            <h2 style="margin-bottom: 1rem; color: var(--text-dark);">Ready to Start Your Journey?</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-light); font-size: 1.1rem;">
+                Join thousands of successful engineers who started their career at PRPPEM
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/admissions" class="btn btn-primary">
+                    <i class="fas fa-graduation-cap"></i> Apply Now
+                </a>
+                <a href="/contact" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,396 @@
+` tags, ensuring no forbidden words are included. I will prioritize correctness and completeness.
+
+```
+<replit_final_file>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}P R Pote Patil Engineering and Management, Amravati{% endblock %}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Meta Tags -->
+    <meta name="description" content="P R Pote Patil College of Engineering & Management, Amravati - Excellence in Technical Education Since 1983. AICTE Approved Engineering College in Maharashtra.">
+    <meta name="keywords" content="engineering college, amravati, maharashtra, technical education, AICTE approved, computer science, mechanical, civil, electrical">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- PWA Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <style>
+        
+        /* Critical CSS for faster loading */
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            margin: 0; 
+            padding: 0;
+        }
+
+        /* Loading screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>PRPPEM</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="navigation">
+                <ul>
+                    <li><a href="/"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                    <li><a href="/about"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
+                    <li><a href="/academics"><i class="fas fa-book"></i> <span>Academics</span></a></li>
+                    <li><a href="/admissions"><i class="fas fa-user-plus"></i> <span>Admissions</span></a></li>
+                    <li><a href="/placement"><i class="fas fa-briefcase"></i> <span>Placement</span></a></li>
+                    <li><a href="/contact"><i class="fas fa-phone"></i> <span>Contact</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Theme Indicator -->
+    <div class="theme-indicator" id="themeIndicator">
+        <i class="fas fa-sun"></i>
+        <span>Light Mode</span>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navigation = document.getElementById('navigation');
+        const navIcon = navToggle.querySelector('i');
+
+        navToggle.addEventListener('click', () => {
+            navigation.classList.toggle('active');
+            navIcon.classList.toggle('fa-bars');
+            navIcon.classList.toggle('fa-times');
+        });
+
+        // Close nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navigation.contains(e.target) && !navToggle.contains(e.target)) {
+                navigation.classList.remove('active');
+                navIcon.classList.add('fa-bars');
+                navIcon.classList.remove('fa-times');
+            }
+        });
+
+        // Close nav when clicking nav links
+        navigation.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navigation.classList.remove('active');
+                navIcon.classList.add('fa-bars');
+                navIcon.classList.remove('fa-times');
+            });
+        });
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loadingScreen');
+            setTimeout(() => {
+                loadingScreen.classList.add('fade-out');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Scroll Animations
+        const observeElements = () => {
+            const elements = document.querySelectorAll('.scroll-animate');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            elements.forEach(el => observer.observe(el));
+        };
+
+        // Header Scroll Effect
+        let lastScrollY = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = 'flex';
+                } else {
+                    backToTop.style.display = 'none';
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize scroll animations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', observeElements);
+
+        // Add loading class to elements for staggered animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.glass-card, .feature-card, .program-card');
+            elements.forEach((el, index) => {
+                el.classList.add('loading');
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Light Sensitivity Detection
+        let lightSensor = null;
+        const themeIndicator = document.getElementById('themeIndicator');
+        const body = document.body;
+
+        // Fallback: Use time-based detection
+        function updateThemeByTime() {
+            const hour = new Date().getHours();
+            const isDaytime = hour >= 6 && hour < 18;
+            
+            if (isDaytime) {
+                body.classList.add('light-theme');
+                themeIndicator.innerHTML = '<i class="fas fa-sun"></i><span>Light Mode</span>';
+            } else {
+                body.classList.remove('light-theme');
+                themeIndicator.innerHTML = '<i class="fas fa-moon"></i><span>Dark Mode</span>';
+            }
+        }
+
+        // Advanced: Use Ambient Light Sensor API if available
+        if ('AmbientLightSensor' in window) {
+            try {
+                lightSensor = new AmbientLightSensor({ frequency: 1 });
+                lightSensor.addEventListener('reading', () => {
+                    const lightLevel = lightSensor.illuminance;
+                    
+                    if (lightLevel > 50) { // Bright environment
+                        body.classList.add('light-theme');
+                        themeIndicator.innerHTML = '<i class="fas fa-sun"></i><span>Light Mode</span>';
+                    } else { // Dark environment
+                        body.classList.remove('light-theme');
+                        themeIndicator.innerHTML = '<i class="fas fa-moon"></i><span>Dark Mode</span>';
+                    }
+                });
+                
+                lightSensor.addEventListener('error', event => {
+                    console.log('Light sensor error:', event.error.name, event.error.message);
+                    updateThemeByTime(); // Fallback
+                });
+                
+                lightSensor.start();
+            } catch (error) {
+                console.log('Light sensor not supported:', error);
+                updateThemeByTime(); // Fallback
+            }
+        } else {
+            // Use device light event as fallback
+            window.addEventListener('devicelight', function(event) {
+                const lightLevel = event.value;
+                
+                if (lightLevel > 50) {
+                    body.classList.add('light-theme');
+                    themeIndicator.innerHTML = '<i class="fas fa-sun"></i><span>Light Mode</span>';
+                } else {
+                    body.classList.remove('light-theme');
+                    themeIndicator.innerHTML = '<i class="fas fa-moon"></i><span>Dark Mode</span>';
+                }
+            });
+            
+            // If no light sensor available, use time-based detection
+            setTimeout(updateThemeByTime, 1000);
+        }
+
+        // Manual theme toggle on indicator click
+        themeIndicator.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            if (body.classList.contains('light-theme')) {
+                themeIndicator.innerHTML = '<i class="fas fa-sun"></i><span>Light Mode</span>';
+            } else {
+                themeIndicator.innerHTML = '<i class="fas fa-moon"></i><span>Dark Mode</span>';
+            }
+        });
+
+        // Update theme every 30 minutes as backup
+        setInterval(updateThemeByTime, 30 * 60 * 1000);
+
+        // Touch and Gesture Support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const swipeDistance = touchEndX - touchStartX;
+
+            if (Math.abs(swipeDistance) > swipeThreshold) {
+                if (swipeDistance > 0 && navigation.classList.contains('active')) {
+                    // Swipe right - close nav if open
+                    navigation.classList.remove('active');
+                    navIcon.classList.add('fa-bars');
+                    navIcon.classList.remove('fa-times');
+                }
+            }
+        }
+
+        // Performance Optimization - Lazy Loading Images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+
+    <style>
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</body>
+</html>
